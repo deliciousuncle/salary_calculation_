@@ -33,11 +33,11 @@ public class monthly_salary extends AppCompatActivity {
 
     public void calculate_monthly_salary(View view) {
 if(basic_salary.length()==0||monthly_bonus.length()==0){Salary.setText("底薪或獎金未輸入");return;}
-        int basesalary=Integer.parseInt(basic_salary.getText().toString());
+        int basesalary=Integer.parseInt(basic_salary.getText().toString());//獲取底薪
         your_base_salary.setText(basesalary+"");
-        int monthlybonus=Integer.parseInt((monthly_bonus.getText().toString()));
+        int monthlybonus=Integer.parseInt((monthly_bonus.getText().toString()));//獲取獎金
         your_monthly_bouns.setText(monthlybonus+"");
-        Salary.setText(basesalary+monthlybonus+"");
+        Salary.setText(basesalary+monthlybonus+"");//月薪
     }
 
     public void clear(View view) {

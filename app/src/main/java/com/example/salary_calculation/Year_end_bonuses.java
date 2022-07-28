@@ -45,14 +45,14 @@ private double base_year_end_bounes_db,Max_year_end_bounes_db;
     }
 
     public void calculate_year_end_bounes_btn(View view) {
-        base_year_end_bounes_db=Double.parseDouble(base_year_end_bounes.getText().toString());
-        Max_year_end_bounes_db=Double.parseDouble((Max_year_end_bounes.getText().toString()));
+        base_year_end_bounes_db=Double.parseDouble(base_year_end_bounes.getText().toString());//取得最低月年終
+        Max_year_end_bounes_db=Double.parseDouble((Max_year_end_bounes.getText().toString()));//取得最高月年終
         if(base_year_end_bounes_db>Max_year_end_bounes_db){
             return;
         }
         for(double i=base_year_end_bounes_db;i<=Max_year_end_bounes_db;i++){
             HashMap<String,String> hashMap=new HashMap<>();
-            hashMap.put(from[0],(double)base_Salary*i+"");
+            hashMap.put(from[0],(double)base_Salary*i+""); //計算年終獎金,從最少~最多
             list.add(hashMap);
             adapter.notifyDataSetChanged();
             listview.smoothScrollToPosition(list.size()-1);
